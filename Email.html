@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<script language="javascript">
+function check(){
+	var res ="";
+	var msg=true;
+	 var email= document.getElementById("email").value;
+	 
+	 if (email.length>0 && email.indexOf("@")>0 && email.indexOf(".")>0){
+		 document.getElementById("error_email").innerHTML="";
+			res +="Email:"+email+"<br/>";
+		 }
+		else{
+			 document.getElementById("error_email").innerHTML="Enter Your Email";
+		     var msg=false;
+			} 
+			
+	if (msg==true){
+		var x=window.open("","msg","height=400,weight=300");
+		x.document.write(res);
+		}
+	
+	}
+</script>
+</head>
+
+<body>
+<table>
+	<tr>
+    	<td>E-mail:</td>
+    	<td>
+        <input type="email" id="email" name="email"/>
+        <span id="error_email"></span>
+        </td>
+    </tr>
+	<tr>
+    	<td>&nbsp;</td>
+    	<td><input type="button" value="Submit" onClick="check()"/></td>
+    </tr>
+</table>
+</body>
+</html>
